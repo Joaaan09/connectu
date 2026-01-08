@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      - DB_HOST=mongodb_server
+      - DB_USER=mernuser
+      - DB_PASSWORD=secret123
+      - DB_NAME=mernapp
+      - DB_PORT=27017
+    depends_on:
+      - mongodb
+    networks:
+      - reverse_proxy_network
+
+  client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    depends_on:
+      - server
+    networks:
+      - reverse_proxy_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_server
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mernuser
+      - MONGO_INITDB_ROOT_PASSWORD=secret123
+      - MONGO_INITDB_DATABASE=mernapp
+    volumes:
+      - mydata:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - reverse_proxy_network
+
+volumes: 
+  mydata:
+
+networks:
+  reverse_proxy_network:
+    external: true
