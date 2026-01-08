@@ -1,0 +1,480 @@
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 300px;
+  }
+
+  .layout__navbar {
+    display: none;
+  }
+
+  .layout__aside {
+    width: 300px;
+  }
+
+  .aside__container {
+    padding: 16px 12px;
+  }
+
+  .content__posts {
+    gap: 12px;
+  }
+
+  .posts__post {
+    padding: 12px;
+  }
+
+  .content__header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .content__title {
+    font-size: 24px;
+  }
+
+  .content__button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "navbar"
+      "content"
+      "aside";
+    min-height: auto;
+  }
+
+  .layout__navbar {
+    display: flex;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar__header {
+    padding: 16px 20px;
+  }
+
+  .navbar__title {
+    font-size: 20px;
+  }
+
+  .navbar__container-lists {
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .container-lists__menu-list {
+    flex-direction: row;
+    gap: 4px;
+    flex: 1;
+    margin: 0 16px;
+  }
+
+  .menu-list__link {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .menu-list__title {
+    display: none;
+  }
+
+  .menu-list__link i {
+    font-size: 16px;
+  }
+
+  .container-lists__list-end {
+    flex-direction: row;
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .list-end__link {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .list-end__name {
+    display: none;
+  }
+
+  .list-end__link i {
+    margin-left: 0;
+  }
+
+  .layout__content {
+    padding: 16px 12px;
+  }
+
+  .content__header {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+  }
+
+  .content__title {
+    font-size: 24px;
+  }
+
+  .content__button {
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .content__posts {
+    gap: 12px;
+  }
+
+  .posts__post {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .post__image-user {
+    width: 40px;
+    min-width: 40px;
+  }
+
+  .post__image-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post__user-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .post__content {
+    font-size: 14px;
+  }
+
+  .post__buttons {
+    margin-left: 0;
+  }
+
+  .post__button {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .layout__aside {
+    position: relative;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    height: auto;
+  }
+
+  .aside__header {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .aside__title {
+    font-size: 18px;
+  }
+
+  .aside__container {
+    padding: 16px 12px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .aside__profile-info {
+    gap: 16px;
+  }
+
+  .profile-info__stats {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .general-info__container-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .container-names__name {
+    font-size: 16px;
+  }
+
+  .form-post__textarea {
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  .form-post__btn-submit {
+    padding: 10px 16px;
+  }
+
+  .content__container-btn {
+    margin-top: 16px;
+  }
+
+  .content__btn-more-post {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .navbar__header {
+    padding: 12px 16px;
+  }
+
+  .navbar__title {
+    font-size: 18px;
+  }
+
+  .container-lists__menu-list {
+    margin: 0 8px;
+    gap: 2px;
+  }
+
+  .menu-list__link {
+    padding: 6px 8px;
+  }
+
+  .menu-list__link i {
+    font-size: 14px;
+    width: 16px;
+  }
+
+  .list-end__img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .layout__content {
+    padding: 12px 8px;
+  }
+
+  .content__header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .content__title {
+    font-size: 20px;
+  }
+
+  .content__button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .content__posts {
+    gap: 8px;
+  }
+
+  .posts__post {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .post__image-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .post__user-info {
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .post__content {
+    font-size: 13px;
+  }
+
+  .post__button {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .aside__header {
+    padding: 12px 8px;
+  }
+
+  .aside__title {
+    font-size: 16px;
+  }
+
+  .aside__container {
+    padding: 12px 8px;
+    gap: 12px;
+  }
+
+  .aside__profile-info {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .general-info__container-avatar {
+    width: 56px;
+    height: 56px;
+    border-width: 3px;
+  }
+
+  .container-names__name {
+    font-size: 14px;
+  }
+
+  .container-names__nickname {
+    font-size: 12px;
+  }
+
+  .profile-info__stats {
+    gap: 6px;
+  }
+
+  .following__link {
+    padding: 8px 6px;
+    gap: 3px;
+  }
+
+  .following__title {
+    font-size: 11px;
+  }
+
+  .following__number {
+    font-size: 16px;
+  }
+
+  .form-post__label {
+    font-size: 13px;
+  }
+
+  .form-post__textarea {
+    padding: 10px;
+    min-height: 50px;
+    font-size: 13px;
+  }
+
+  .form-post__image {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .form-post__btn-submit {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .content__btn-more-post {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 13px;
+  }
+
+  .navbar__title {
+    font-size: 16px;
+  }
+
+  .container-lists__menu-list {
+    margin: 0 4px;
+  }
+
+  .menu-list__link {
+    padding: 4px 6px;
+  }
+
+  .menu-list__link i {
+    font-size: 12px;
+  }
+
+  .list-end__img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .content__title {
+    font-size: 18px;
+  }
+
+  .content__button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .posts__post {
+    padding: 8px;
+  }
+
+  .post__image-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .post__user-info {
+    font-size: 11px;
+    gap: 2px;
+  }
+
+  .post__content {
+    font-size: 12px;
+  }
+
+  .post__button {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .aside__title {
+    font-size: 14px;
+  }
+
+  .general-info__container-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .container-names__name {
+    font-size: 13px;
+  }
+
+  .form-post__label {
+    font-size: 12px;
+  }
+
+  .form-post__textarea {
+    padding: 8px;
+    min-height: 40px;
+  }
+
+  .form-post__btn-submit {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
