@@ -11,7 +11,7 @@ connection();
 
 // Crear servidor node
 const app = express();
-const puerto = 3900;
+const puerto = process.env.PORT || 3900;
 
 // Configurar CORS
 app.use(cors());
@@ -19,6 +19,9 @@ app.use(cors());
 // Convertir los datos del body a objetos js
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); // Cualquier dato que llegue con el formato url enconded lo codificara como un objeto js
+
+// Servir archivos estáticos
+app.use("/uploads", express.static("./uploads"));
 
 // Cargar conf rutas
 const UserRoutes = require("./routes/user");

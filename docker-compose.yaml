@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   server:
@@ -12,6 +12,8 @@ services:
       - DB_PASSWORD=secret123
       - DB_NAME=mernapp
       - DB_PORT=27017
+    volumes:
+      - ./backend/uploads:/app/uploads
     depends_on:
       - mongodb
     networks:
@@ -40,7 +42,7 @@ services:
     networks:
       - reverse_proxy_network
 
-volumes: 
+volumes:
   mydata:
 
 networks:
