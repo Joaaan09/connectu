@@ -55,6 +55,48 @@ export const Login = () => {
       </header>
 
       <div className="content__posts">
+        <div className="test-credentials">
+          <h3 className="test-credentials__title">
+            <i className="fa-solid fa-circle-info"></i> Credenciales de Prueba
+          </h3>
+          <div className="test-credentials__list">
+            <div className="test-credentials__item">
+              <span className="test-credentials__label">Usuario:</span>
+              <span
+                className="test-credentials__value"
+                onClick={(e) => {
+                  navigator.clipboard.writeText("test@connectu.com");
+                  const span = e.currentTarget;
+                  const popup = document.createElement("span");
+                  popup.className = "test-credentials__copied-popup";
+                  popup.innerText = "¡Copiado!";
+                  span.appendChild(popup);
+                  setTimeout(() => popup.remove(), 1500);
+                }}
+              >
+                test@connectu.com
+              </span>
+            </div>
+            <div className="test-credentials__item">
+              <span className="test-credentials__label">Contraseña:</span>
+              <span
+                className="test-credentials__value"
+                onClick={(e) => {
+                  navigator.clipboard.writeText("testPass");
+                  const span = e.currentTarget;
+                  const popup = document.createElement("span");
+                  popup.className = "test-credentials__copied-popup";
+                  popup.innerText = "¡Copiado!";
+                  span.appendChild(popup);
+                  setTimeout(() => popup.remove(), 1500);
+                }}
+              >
+                testPass
+              </span>
+            </div>
+          </div>
+          <p className="test-credentials__copy-hint">Haz clic en los valores para copiarlos</p>
+        </div>
 
         {login && (
           <strong
@@ -75,6 +117,7 @@ export const Login = () => {
         <form className="login-form" onSubmit={loginUser}>
 
           <div className="form-group">
+            <p>Usuario prueba: test@connectu.com | Contraseña: testPass</p>
             <label htmlFor="email">Correo electrónico</label>
             <input type="email" name='email' onChange={changed} />
           </div>
