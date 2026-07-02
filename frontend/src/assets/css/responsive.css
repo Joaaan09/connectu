@@ -107,6 +107,11 @@
     font-size: 12px;
   }
 
+  .list-end__img {
+    width: 44px;
+    height: 44px;
+  }
+
   .list-end__name {
     display: none;
   }
@@ -115,7 +120,8 @@
     margin-left: 0;
   }
 
-  .layout__content {
+  .layout__content,
+  .layout_content {
     padding: 16px 12px;
   }
 
@@ -267,7 +273,8 @@
     height: 32px;
   }
 
-  .layout__content {
+  .layout__content,
+  .layout_content {
     padding: 12px 8px;
   }
 
