@@ -126,6 +126,45 @@ textarea:focus-visible {
     "navbar content aside";
 }
 
+/* Páginas públicas (login / registro): no existe el aside, así que no
+   reservamos su columna y centramos el contenido en el espacio real. */
+.layout:not(:has(.layout__aside)) {
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "navbar content";
+}
+
+.layout:not(:has(.layout__aside)) .layout__content,
+.layout:not(:has(.layout__aside)) .layout_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(24px, 5vh, 56px) clamp(16px, 4vw, 40px);
+}
+
+/* El bloque que envuelve alerta + formulario se limita y se centra */
+.layout:not(:has(.layout__aside)) .content__posts {
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+/* Cabecera pública centrada, sin la línea divisoria de las vistas internas */
+.layout:not(:has(.layout__aside)) .content__header--public {
+  width: auto;
+  justify-content: center;
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0 0 clamp(18px, 3vh, 28px);
+}
+
+.layout:not(:has(.layout__aside)) .content__header--public .content__title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* =========================================================
    Navbar (barra lateral izquierda)
    ========================================================= */
@@ -1193,4 +1232,34 @@ textarea:focus-visible {
   20% { opacity: 1; transform: translate(-50%, -10px); }
   80% { opacity: 1; transform: translate(-50%, -10px); }
   100% { opacity: 0; transform: translate(-50%, -15px); }
+}
+
+/* =========================================================
+   Responsive de las páginas públicas (login / registro)
+   Se colocan aquí para respetar el orden de cascada.
+   ========================================================= */
+
+/* Tablet: el navbar lateral se oculta, el contenido ocupa todo el ancho */
+@media (max-width: 1024px) {
+  .layout:not(:has(.layout__aside)) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content";
+  }
+}
+
+/* Móvil: navbar arriba como barra y contenido debajo, alineado arriba */
+@media (max-width: 768px) {
+  .layout:not(:has(.layout__aside)) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "content";
+  }
+
+  .layout:not(:has(.layout__aside)) .layout__content,
+  .layout:not(:has(.layout__aside)) .layout_content {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 32px;
+  }
 }
